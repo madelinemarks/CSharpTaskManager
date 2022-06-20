@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SupportTicketXamarin.MainPage">
+
+    <StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5*"></RowDefinition>
+                <RowDefinition Height="10*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <SearchBar Grid.Column="0" Grid.Row="1" Text="{Binding Query, Mode=TwoWay}"></SearchBar>
+            <Button Grid.Column="1" Grid.Row="1" Text="Filter" Clicked="Incomplete_Clicked"></Button>
+            <Button Grid.Column="2" Grid.Row="1" Text="Sort" Clicked="Sort_Clicked"></Button>
+        </Grid>
+        <ListView ItemsSource="{Binding Items, UpdateSourceEventName=PropertyChanged, Mode=TwoWay}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
+    
+              
+        </ListView>
+        <Grid VerticalOptions="End" HorizontalOptions="CenterAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            
+        <Button Text="Edit" Grid.Row="0" Grid.Column="0" Clicked="Edit_Clicked"></Button>
+        <Button Text="Delete" Grid.Row="0" Grid.Column="1" Clicked="Delete_Clicked"></Button>
+        </Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
+            </Grid.RowDefinitions>
+            
+        <Button Text="Add Appointment" Grid.Row="0" Clicked="AddA_Clicked"></Button>
+        <Button Text="Add Task" Grid.Row="1" Clicked="AddT_Clicked"></Button>
+        <Button Text="View Incomplete Tasks" Grid.Row="2" Clicked="Incomplete_Clicked"></Button>
+        <Button Text="Save" Grid.Row="3" Clicked="Save_Clicked"></Button>
+           
+        </Grid>
+    </StackLayout>
+
+</ContentPage>
